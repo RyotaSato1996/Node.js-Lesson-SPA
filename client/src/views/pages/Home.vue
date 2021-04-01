@@ -68,4 +68,3 @@ export default {
   padding: initial;
 }
 </style>
-  
