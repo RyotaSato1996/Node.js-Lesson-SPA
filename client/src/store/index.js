@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     isAuthenticated: false,
     todoList: [],
-    // completedTodoList: [],
+    users: []
   },
   getters: {
     loginUser: (state) => state.loginUser,
@@ -25,6 +25,7 @@ export default new Vuex.Store({
       const completedTodoList = todoList.filter((v) => v.isCompleted);
       return completedTodoList;
     },
+    users: (state) => state.users,
   },
   mutations: {
     updateLoginUser(state, user) {
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     },
     updateTodoList(state, todoList) {
       state.todoList = todoList;
+    },
+    updateUsers(state, users) {
+      state.users = users;
     },
   },
   actions: {
@@ -95,5 +99,11 @@ export default new Vuex.Store({
       await axios.delete(`${BASE_URL}/todo/${todo.id}`, todo);
       dispatch('updateTodoList');
     },
+    async getAllUser({ commit }) {
+      const users = await axios
+        .get(`${BASE_URL}/user/all`)
+        .then((res) => res.data);
+      commit('updateUsers', users);
+    }
   },
 });
