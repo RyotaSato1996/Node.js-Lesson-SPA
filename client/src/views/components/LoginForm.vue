@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   data() {
     return {
@@ -32,24 +30,7 @@ export default {
   },
   methods: {
     login() {
-      const param = {
-        username: this.user.username,
-        password: this.user.password,
-      };
-      this.$store.dispatch('updateLoginUser', param);
-    },
-  },
-  computed: {
-    ...mapState([
-      'loginUser',
-      'isAuthenticated',
-    ]),
-  },
-  watch: {
-    isAuthenticated() {
-      if (this.isAuthenticated) {
-        this.$router.push({ name: 'home' });
-      }
+      return this.$emit('update-login-user', this.user);
     },
   },
 };
