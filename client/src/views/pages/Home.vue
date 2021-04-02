@@ -56,7 +56,7 @@ export default {
   computed: {
     ...mapGetters([
       'todoList',
-      'completedTodoList'
+      'completedTodoList',
     ]),
   },
 };
