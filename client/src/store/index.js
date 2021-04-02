@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     isAuthenticated: false,
     todoList: [],
-    users: []
+    users: [],
   },
   getters: {
     loginUser: (state) => state.loginUser,
@@ -104,6 +104,6 @@ export default new Vuex.Store({
         .get(`${BASE_URL}/user/all`)
         .then((res) => res.data);
       commit('updateUsers', users);
-    }
+    },
   },
 });
