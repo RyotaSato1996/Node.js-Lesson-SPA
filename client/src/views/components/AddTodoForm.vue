@@ -29,26 +29,26 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      todo: {
-        type: Object,
+export default {
+  props: {
+    todo: {
+      type: Object,
+    },
+  },
+  data() {
+    return {
+      param: {
+        title: '',
+        content: '',
       },
+    };
+  },
+  methods: {
+    addClick() {
+      return this.$emit('add-todo', this.param);
     },
-    data() {
-      return {
-        param: {
-          title: '',
-          content: '',
-        },
-      }
-    },
-    methods: {
-      addClick() {
-        return this.$emit('add-todo', this.param);
-      }
-    },
-  };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
