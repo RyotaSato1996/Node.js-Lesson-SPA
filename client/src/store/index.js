@@ -101,8 +101,8 @@ export default new Vuex.Store({
     },
     async getAllUser({ commit }) {
       const users = await axios
-      .get(`${BASE_URL}/user/all`)
-      .then((res) => res.data);
+        .get(`${BASE_URL}/user/all`)
+        .then((res) => res.data);
       commit('updateUsers', users);
     }
   },
