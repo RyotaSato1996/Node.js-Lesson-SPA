@@ -3,6 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:8080/api';
 
 export default {
+  namespaced: true,
   state: {
     loginUser: {
       userName: '',
@@ -39,6 +40,7 @@ export default {
         .post(`${BASE_URL}/login`, param)
         .then((resp) => resp)
         .catch((err) => err.response);
+      console.log(res);
 
       if (res.status === 200) {
         commit('updateLoginUser', res.data);
