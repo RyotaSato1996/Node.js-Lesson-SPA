@@ -40,7 +40,7 @@ export default {
         .post(`${BASE_URL}/login`, param)
         .then((resp) => resp)
         .catch((err) => err.response);
-      console.log(res);
+      console.log("ああああ");
 
       if (res.status === 200) {
         commit('updateLoginUser', res.data);

@@ -19,14 +19,19 @@ export default {
   methods: {
     ...mapActions(
       'user',
-      ['logout'],
+      [
+        'logout',
+        'checkAuthenticated',
+        'isAuthenticated',
+      ],
     ),
   },
   computed: {
     ...mapGetters(
       'user',
-      ['loginUser'],
-      ['isAuthenticated'],
+      [
+        'loginUser',
+      ],
     ),
   },
   watch: {

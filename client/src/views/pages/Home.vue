@@ -47,22 +47,26 @@ export default {
   methods: {
     ...mapActions(
       'todo',
-      ['addTodo'],
-      ['updateTodo'],
-      ['deleteTodo'],
+      [
+        'addTodo',
+        'updateTodo',
+        'deleteTodo',
+      ],
     ),
     ...mapActions(
       'todo',
       {
-        getTodoList: ['updateTodoList'],
+        getTodoList: 'updateTodoList',
       },
     ),
   },
   computed: {
     ...mapGetters(
       'todo',
-      ['todoList'],
-      ['completedTodoList'],
+      [
+        'todoList',
+        'completedTodoList',
+      ],
     ),
   },
 };

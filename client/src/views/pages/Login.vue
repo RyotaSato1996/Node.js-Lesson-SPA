@@ -13,14 +13,18 @@ export default {
   methods: {
     ...mapActions(
       'user',
-      ['updateLoginUser'],
+      [
+        'updateLoginUser',
+        'isAuthenticated',
+      ],
     ),
   },
   computed: {
     ...mapGetters(
       'user',
-      ['loginUser'],
-      ['isAuthenticated'],
+      [
+        'loginUser',
+      ],
     ),
   },
   watch: {
