@@ -15,7 +15,6 @@ export default {
       'user',
       [
         'updateLoginUser',
-        'isAuthenticated',
       ],
     ),
   },
@@ -24,6 +23,7 @@ export default {
       'user',
       [
         'loginUser',
+        'isAuthenticated',
       ],
     ),
   },

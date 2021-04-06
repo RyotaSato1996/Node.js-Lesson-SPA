@@ -41,7 +41,7 @@ export default {
     MyTodoDetail,
   },
   created() {
-    console.log(this);
+    // console.log(this);
     this.getTodoList();
   },
   methods: {
