@@ -17,15 +17,22 @@ export default {
     MyNavi,
   },
   methods: {
-    ...mapActions([
-      'logout',
-    ]),
+    ...mapActions(
+      'user',
+      [
+        'logout',
+        'checkAuthenticated',
+      ],
+    ),
   },
   computed: {
-    ...mapGetters([
-      'loginUser',
-      'isAuthenticated',
-    ]),
+    ...mapGetters(
+      'user',
+      [
+        'loginUser',
+        'isAuthenticated',
+      ],
+    ),
   },
   watch: {
     isAuthenticated() {

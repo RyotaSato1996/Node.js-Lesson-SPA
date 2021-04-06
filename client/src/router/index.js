@@ -59,9 +59,11 @@ router.beforeEach(async (to, from, next) => {
     return next();
   }
 
+  // console.log(store);
   // 下記２行でユーザーが認証済かどうかを取得
-  await store.dispatch('checkAuthenticated');
-  const { isAuthenticated } = store.getters;
+  await store.dispatch('user/checkAuthenticated');
+  const isAuthenticated = store.getters['user/isAuthenticated'];
+  // console.log(store.getters);
 
   // isPublic でない場合(=認証が必要な場合)、かつ、ログインしていない場合
   if (!to.meta.isPublic && !isAuthenticated) {

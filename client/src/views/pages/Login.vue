@@ -11,15 +11,21 @@ export default {
     MyLoginForm,
   },
   methods: {
-    ...mapActions([
-      'updateLoginUser',
-    ]),
+    ...mapActions(
+      'user',
+      [
+        'updateLoginUser',
+      ],
+    ),
   },
   computed: {
-    ...mapGetters([
-      'loginUser',
-      'isAuthenticated',
-    ]),
+    ...mapGetters(
+      'user',
+      [
+        'loginUser',
+        'isAuthenticated',
+      ],
+    ),
   },
   watch: {
     isAuthenticated() {

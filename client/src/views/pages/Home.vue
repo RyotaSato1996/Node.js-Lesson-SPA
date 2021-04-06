@@ -41,23 +41,33 @@ export default {
     MyTodoDetail,
   },
   created() {
+    // console.log(this);
     this.getTodoList();
   },
   methods: {
-    ...mapActions([
-      'addTodo',
-      'updateTodo',
-      'deleteTodo',
-    ]),
-    ...mapActions({
-      getTodoList: 'updateTodoList',
-    }),
+    ...mapActions(
+      'todo',
+      [
+        'addTodo',
+        'updateTodo',
+        'deleteTodo',
+      ],
+    ),
+    ...mapActions(
+      'todo',
+      {
+        getTodoList: 'updateTodoList',
+      },
+    ),
   },
   computed: {
-    ...mapGetters([
-      'todoList',
-      'completedTodoList'
-    ]),
+    ...mapGetters(
+      'todo',
+      [
+        'todoList',
+        'completedTodoList',
+      ],
+    ),
   },
 };
 </script>

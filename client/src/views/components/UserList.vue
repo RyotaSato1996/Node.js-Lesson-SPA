@@ -12,14 +12,20 @@ export default {
     this.getAllUser();
   },
   computed: {
-    ...mapGetters([
-      'users'
-    ]),
+    ...mapGetters(
+      'user',
+      [
+        'users',
+      ],
+    ),
   },
   methods: {
-    ...mapActions([
-      'getAllUser'
-    ]),
-  }
+    ...mapActions(
+      'user',
+      [
+        'getAllUser',
+      ],
+    ),
+  },
 };
 </script>
